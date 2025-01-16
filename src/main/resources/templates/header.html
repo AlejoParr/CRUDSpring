@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link th:href="@{/bootstrap.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/styles.css}" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.min.css" rel="stylesheet">
+	<!-- Si se carga el contenido de bootstrap desde la web del desarrollador,
+		 el nav no funciona de manera correcta. No se despliega el dropdown.
+	 	 Se cargaron los archivos localmente en la carpeta static. -->
+    <title>	Sistema de gestión de información</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-light">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">Gestión de información</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            Clientes
+	          </a>
+	          <ul class="dropdown-menu">
+	            <li><a class="dropdown-item" th:href="@{/Cliente/insertarCliente}">Registrar cliente</a></li>
+	            <li><a class="dropdown-item" th:href="@{/Cliente/listadoCliente}">Listado de clientes</a></li>
+	            <li><hr class="dropdown-divider"></li>
+	          </ul>
+	        </li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			    Usuarios
+			  </a>
+			  <ul class="dropdown-menu">
+			    <li><a class="dropdown-item" th:href="@{/Usuario/insertarUsuario}">Registrar usuario</a></li>
+			    <li><a class="dropdown-item" th:href="@{/Usuario/listadoUsuario}">Listado de usuarios</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			  </ul>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			    Proveedores
+			  </a>
+			  <ul class="dropdown-menu">
+			    <li><a class="dropdown-item" th:href="@{/Proveedor/insertarProveedor}">Registrar proveedor</a></li>
+			    <li><a class="dropdown-item" th:href="@{/Proveedor/listadoProveedor}">Listado de proveedores</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			  </ul>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			    Producto
+			  </a>
+			  <ul class="dropdown-menu">
+			    <li><a class="dropdown-item" th:href="@{/Producto/insertarProducto}">Registrar producto</a></li>
+			    <li><a class="dropdown-item" th:href="@{/Producto/listadoProducto}">Listado de productos</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			  </ul>
+			</li>
+			<li class="nav-item dropdown">
+			  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			    Factura
+			  </a>
+			  <ul class="dropdown-menu">
+			    <li><a class="dropdown-item" th:href="@{/Factura/insertarFactura}">Registrar factura</a></li>
+			    <li><a class="dropdown-item" th:href="@{/Factura/listadoFactura}">Listado de facturas</a></li>
+			    <li><hr class="dropdown-divider"></li>
+			  </ul>
+			</li>
+	      </ul>
+	      <form class="d-flex" role="search">
+			<div style="margin-left: auto;">
+		        <button class="btn btn-outline-success" th:ref="@{http://localhost:8080/login}" type="button">Login</button>
+				<button class="btn btn-outline-success" th:ref="@{http://localhost:8080/logout}" type="button">Log Out</button>
+			</div> 	
+
+	      </form>
+	    </div>
+	  </div>
+	</nav>
